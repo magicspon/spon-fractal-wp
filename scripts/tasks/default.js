@@ -15,6 +15,10 @@ const { syncPartials, serverProxy } = require('./cms')
 const { sizeReport } = require('../utils/logger')
 const validateHtml = require('../utils/htmllint')
 const criticalCSS = require('./critical')
+const regressionTest = require('../backstop')
+const buildStatic = require('../fractal/static')
+const rev = require('./rev')
+
 const server = global.config === 'cms' ? serverProxy : fractalServer
 const defaultTask = gulp.series(
 	clean,
@@ -26,6 +30,7 @@ const defaultTask = gulp.series(
 )
 const cmsTask = gulp.series(
 	clean,
+	rev,
 	buildComponets,
 	syncPartials,
 	assets,
@@ -34,9 +39,6 @@ const cmsTask = gulp.series(
 	watch,
 	server
 )
-const regressionTest = require('../backstop')
-const buildStatic = require('../fractal/static')
-const rev = require('./rev')
 
 const build = gulp.series(
 	clean,

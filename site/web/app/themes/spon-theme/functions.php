@@ -32,6 +32,23 @@ Timber::$dirname = array( 'templates', 'views' );
 Timber::$autoescape = false;
 
 
+
+add_filter('timber/twig', 'add_to_twig');
+
+function add_to_twig($twig) {
+    /* this is where you can add your own functions to twig */
+    $twig->addFunction( new Timber\Twig_Function( 'asset', 'asset' ) );
+    return $twig;
+}
+
+
+
+function asset($text) {
+    $map = file_get_contents(__ROOT__ . '/manifest.json');
+    $alias_handles = json_decode($map, true);
+    return $alias_handles[$text];
+}
+
 require_once('lib/fractal-loader.php');
 
 function fractal_twig_loader($loader) {

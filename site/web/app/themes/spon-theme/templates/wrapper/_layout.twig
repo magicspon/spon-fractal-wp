@@ -32,10 +32,10 @@
 					<!-- build:critical-->
 					<!-- endbuild -->
 				{% endblock %}
-				<link rel="preload" href="/app/themes/spon-theme/dist/css/style{{ stamp }}.css" as="style" onload="this.rel='stylesheet'">
-				<noscript><link rel="stylesheet" href="/app/themes/spon-theme/dist/css/style{{ stamp }}.css"></noscript>
+				<link rel="preload" href="{{ asset('/app/themes/spon-theme/dist/css/style.css') }}" as="style" onload="this.rel='stylesheet'">
+				<noscript><link rel="stylesheet" href="{{ asset('/app/themes/spon-theme/dist/css/style.css') }}"></noscript>
 			{% else %}
-				<link rel="stylesheet" href="/app/themes/spon-theme/dist/css/style{{ stamp }}.css">
+				<link rel="stylesheet" href="{{ asset('/app/themes/spon-theme/dist/css/style.css') }}">
 			{% endif %}
 			<script>
 				if(!window.HTMLPictureElement || !('sizes' in document.createElement('img'))){
@@ -53,13 +53,11 @@
 
 			{% endblock %}
       {% include '@footer' %}
-
-
       {% include '@symbols' %}
 			<script>
 				loadjs([
 					'https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.from%2CElement.prototype.closest%2CElement.prototype.matches%2CIntersectionObserver%2CObject.assign%2CObject.entries%2CURL%2Cfetch%2CmatchMedia%2CrequestAnimationFrame%2CWeakSet%2CArray.prototype.includes%2CObject.values',
-					'/app/themes/spon-theme/dist/js/app.bundle{{ stamp }}.js'
+					'{{ asset("/app/themes/spon-theme/dist/js/app.bundle.js") }}'
 				], {async: false});
 			</script>
 		</body>
