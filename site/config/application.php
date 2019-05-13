@@ -103,3 +103,6 @@ Config::apply();
 if (!defined('ABSPATH')) {
     define('ABSPATH', $webroot_dir . '/wp/');
 }
+
+
+define('__ROOT__', $root_dir);

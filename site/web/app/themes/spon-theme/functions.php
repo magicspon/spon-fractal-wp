@@ -35,7 +35,7 @@ Timber::$autoescape = false;
 require_once('lib/fractal-loader.php');
 
 function fractal_twig_loader($loader) {
-    $map = file_get_contents(__DIR__ . '/components-map.json');
+    $map = file_get_contents(__ROOT__ . '/components-map.json');
     $alias_handles = json_decode($map, true);
     $customLoader = new Alias_Loader($alias_handles);
     // Add our loader to the end of the chain (i.e. Timber does its lookup, then runs ours)
