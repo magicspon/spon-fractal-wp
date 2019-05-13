@@ -1,6 +1,6 @@
 const gulp = require('gulp')
 const source = require('vinyl-source-stream')
-const { getCMSPath, getThemeDir } = require('../utils/paths')
+const { getCMSPath } = require('../utils/paths')
 
 module.exports = function(done) {
 	const stamp = PRODUCTION ? `.${global.TASK.stamp}` : ''
