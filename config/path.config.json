@@ -1,0 +1,51 @@
+{
+	"src": "./src/",
+	"static": "./static/",
+	"webroot": "./tmp/public/",
+	"library": "./deploy/library",
+	"cms": "./site/",
+	"images": "**/*.+(jpg|jpeg|png|gif|webp)",
+	"css": "**/*.css",
+	"svgs": "**/*.svg",
+	"themeDir": "/",
+
+	"cacheTag": {
+		"file": "_layout.twig",
+		"dir": "./deploy/templates/wrapper"
+	},
+	"fractal": {
+		"partials": "_partials",
+		"templates": "templates/**/**/**/**/**/**/*.twig",
+		"exclude": ["templates/wrapper/**.twig", "templates/05-pages/**/*.twig"],
+		"cmsOutput": "web/app/themes/spon-theme/_partials"
+	},
+	"symbols": {
+		"src": "**/ui-*.svg",
+		"scss": "scss/framework",
+		"html": "./src/templates/_svgs"
+	},
+	"js": {
+		"src": "js",
+		"dest": "dist/js",
+		"publicPath": "/dist/js",
+		"libs": ["./node_modules/picturefill/dist/picturefill.min.js"],
+		"inline": {
+			"file": "_base.twig",
+			"dir": "./templates/wrapper",
+			"scripts": [
+				"./node_modules/loadjs/dist/loadjs.min.js",
+				"./node_modules/fg-loadcss/dist/loadCSS.min.js",
+				"./node_modules/fg-loadcss/dist/cssrelpreload.min.js"
+			]
+		}
+	},
+	"scss": {
+		"src": ["scss/**/**/*.scss", "templates/**/**/*.scss"],
+		"dest": "dist/css"
+	},
+	"files": {
+		"exclude": "**/*.+(jpg|jpeg|png|gif|svg|css|js)",
+		"dotFiles": ".*",
+		"include": "**/*.*"
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"webroot": "./site/web/",
+	"proxy": "http://sponwp.test/",
+
+	"critical": [{ "url": "/", "css": "home-page" }],
+	"themeDir": "app/themes/spon-theme/",
+
+	"js": {
+		"dest": "/app/themes/spon-theme/dist/js",
+		"publicPath": "/app/themes/spon-theme/dist/js",
+		"inline": {
+			"file": "_layout.twig",
+			"dir": "web/app/themes/spon-theme/templates/wrapper"
+		}
+	},
+
+	"scss": {
+		"dest": "app/themes/spon-theme/dist/css"
+	}
+}

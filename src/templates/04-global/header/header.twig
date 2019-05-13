@@ -1,0 +1,15 @@
+{% import '@helpers' as h %}
+
+HEADER START
+<header>
+	<nav>
+		<ul>
+			{% for item in menu %}
+				<li class="{{ item.classes | join(' ') }}">
+					<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
+</header>
+HEADER END
