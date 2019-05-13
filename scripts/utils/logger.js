@@ -4,7 +4,7 @@ const c = require('ansi-colors')
 const notify = require('gulp-notify')
 const gulp = require('gulp')
 const sizereport = require('gulp-sizereport')
-const { getPublicPath } = require('./paths')
+const { getPublicPath, getThemeDir } = require('./paths')
 
 function prettyTime(milliseconds) {
 	if (milliseconds > 999) {
@@ -49,7 +49,7 @@ const logger = (err, stats) => {
 
 const sizeReport = () =>
 	gulp
-		.src([getPublicPath('dist/**/*.js'), getPublicPath('dist/**/*.css')])
+		.src([getThemeDir('dist/**/*.js'), getThemeDir('dist/**/*.css')])
 		.pipe(sizereport({ gzip: true }))
 
 module.exports = {

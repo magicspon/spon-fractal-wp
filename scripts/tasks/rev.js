@@ -4,10 +4,14 @@ const { getCMSPath } = require('../utils/paths')
 
 module.exports = function(done) {
 	const stamp = PRODUCTION ? `.${global.TASK.stamp}` : ''
+	const {
+		PATHS: { themeDir }
+	} = global
 
+	// prettier-ignore
 	const map = {
-		'/app/themes/spon-theme/dist/css/style.css': `/app/themes/spon-theme/dist/css/style${stamp}.css`,
-		'/app/themes/spon-theme/dist/js/app.bundle.js': `/app/themes/spon-theme/dist/js/app.bundle${stamp}.js`
+		[`${themeDir}dist/css/style.css`]: `${themeDir}dist/css/style${stamp}.css`,
+		[`${themeDir}dist/js/app.bundle.js`]: `${themeDir}dist/js/app.bundle${stamp}.js`
 	}
 
 	const stream = source('manifest.json')

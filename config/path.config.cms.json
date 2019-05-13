@@ -3,7 +3,7 @@
 	"proxy": "http://sponwp.test/",
 
 	"critical": [{ "url": "/", "css": "home-page" }],
-	"themeDir": "app/themes/spon-theme/",
+	"themeDir": "/app/themes/spon-theme/",
 
 	"js": {
 		"dest": "/app/themes/spon-theme/dist/js",

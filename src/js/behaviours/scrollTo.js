@@ -2,11 +2,8 @@ import { withPlugins } from '@spon/core'
 import withDomEvents from '@/plugins/withDomEvents'
 
 function scrollTo({ plugins: { addEvents } }) {
-	function onClick(e, elm) {
+	function onClick(e) {
 		e.preventDefault()
-		const { href } = elm
-		// something
-		console.log(href)
 	}
 
 	addEvents(document, {

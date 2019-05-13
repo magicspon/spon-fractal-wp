@@ -57,6 +57,11 @@ module.exports = function templateEngine(stamp) {
 				}
 			},
 
+			asset(src) {
+				const lastIndex = src.lastIndexOf('.')
+				return `${src.substr(0, lastIndex)}${stamp}${src.substr(lastIndex)}`
+			},
+
 			// craftcms form function
 			csrfInput() {},
 

@@ -2,7 +2,7 @@
 	"src": "./src/",
 	"static": "./static/",
 	"webroot": "./tmp/public/",
-	"library": "./deploy/library",
+	"library": "./site/library",
 	"cms": "./site/",
 	"images": "**/*.+(jpg|jpeg|png|gif|webp)",
 	"css": "**/*.css",

@@ -1,7 +1,7 @@
 const gulp = require('gulp')
 const purgecss = require('gulp-purgecss')
 const path = require('path')
-const { getPublicPath, getSrcPaths, getCMSPath } = require('../utils/paths')
+const { getSrcPaths, getThemeDir } = require('../utils/paths')
 const argList = require('../utils/argv')
 const { backstop: task } = argList(process.argv)
 
@@ -17,10 +17,10 @@ const purge = done => {
 		return
 	}
 
-	const build = getPublicPath('dist')
+	const build = getThemeDir('dist')
 	const html =
 		global.config === 'cms'
-			? getCMSPath('templates/**/**/**/*.twig')
+			? getThemeDir('**/**/**/**/*.twig')
 			: getSrcPaths('templates/**/**.twig')
 	const js = getSrcPaths('js/**/**/*.js')
 	const {

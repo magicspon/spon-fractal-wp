@@ -45,7 +45,7 @@ const build = gulp.series(
 	rev,
 	gulp.parallel(buildComponets, syncPartials, assets, bundle),
 	scss,
-	// purge,
+	purge,
 	sizeReport
 )
 
