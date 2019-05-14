@@ -93,7 +93,8 @@
 		"deliciousbrains/wp-migrate-db-pro": "1.8.6",
 		"deliciousbrains/wp-migrate-db-pro-media-files": "1.4.10",
 		"getdave/wp-intervention": "1.1.0",
-		"wpackagist-plugin/timber-library": "^1.9"
+		"wpackagist-plugin/timber-library": "^1.9",
+		"mindkomm/timmy": "^0.14.0"
 	},
 	"require-dev": {
 		"squizlabs/php_codesniffer": "^3.0.2",

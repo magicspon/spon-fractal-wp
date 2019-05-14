@@ -106,3 +106,5 @@ if (!defined('ABSPATH')) {
 
 
 define('__ROOT__', $root_dir);
+
+define('SHOW_JSON', false);

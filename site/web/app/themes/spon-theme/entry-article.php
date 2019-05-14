@@ -1,5 +1,8 @@
 <?php
 /**
+ * Template Name: Article entry
+ *
+ *
  * The template for displaying all pages.
  *
  * This is the template that displays all pages by default.
@@ -26,6 +29,7 @@ $post = new TimberPost();
 $context['post'] = $post;
 
 Timber::render(array(
+	'page-article.twig',
 	'page-' . $post->post_name . '.twig',
 	'page.twig'
 ), $context);

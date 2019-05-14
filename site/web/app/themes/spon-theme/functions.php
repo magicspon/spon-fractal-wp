@@ -172,3 +172,24 @@ class StarterSite extends Timber\Site {
 }
 
 new StarterSite();
+new Timmy\Timmy();
+
+
+set_post_thumbnail_size(0, 0);
+
+add_filter( 'timmy/sizes', function( $sizes ) {
+    return array(
+        'thumbnail' => array(
+            'resize' => array( 150, 150 ),
+            'name' => 'Thumbnail',
+            'post_types' => array( 'all' ),
+        ),
+        'col-4' => array(
+            'resize' => array( 370 ),
+            'srcset' => array( 2 ),
+            'sizes' => '(min-width: 992px) 33.333vw, 100vw',
+            'name' => 'Width 1/4',
+            'post_types' => array( 'post', 'page' ),
+        ),
+    );
+} );
