@@ -76,6 +76,7 @@
 		"@spon/core": "^1.0.0",
 		"@spon/domevents": "^1.0.0",
 		"debug": "^4.1.1",
+		"domify": "^1.4.0",
 		"fg-loadcss": "^2.1.0",
 		"headroom.js": "^0.9.4",
 		"lit-html": "^1.0.0-rc.2",
@@ -85,7 +86,8 @@
 		"picturefill": "^3.0.3",
 		"quicklink": "^1.0.0",
 		"raf-throttle": "^2.0.3",
-		"ramda": "^0.26.1"
+		"ramda": "^0.26.1",
+		"validate.js": "^0.12.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.0.1",

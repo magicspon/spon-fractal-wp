@@ -4,7 +4,7 @@ const c = require('ansi-colors')
 const notify = require('gulp-notify')
 const gulp = require('gulp')
 const sizereport = require('gulp-sizereport')
-const { getPublicPath, getThemeDir } = require('./paths')
+const { getThemeDir } = require('./paths')
 
 function prettyTime(milliseconds) {
 	if (milliseconds > 999) {
@@ -15,8 +15,6 @@ function prettyTime(milliseconds) {
 
 const handleErrors = (errorObject, callback) => {
 	if (!errorObject) return
-
-	console.log(errorObject)
 
 	notify
 		.onError(

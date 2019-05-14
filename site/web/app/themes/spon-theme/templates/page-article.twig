@@ -1,20 +1,22 @@
-{% extends "wrapper/_layout.twig" %}
+{% embed "wrapper/_layout.twig" %}
 
-{% block content %}
-	<div class="content-wrapper">
-		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-			<section class="article-content">
-				<h1 class="article-h1">{{ post.title }}</h1>
-				<div class="article-body">
-					{{ post.content }}
-          {% set crop = {
-            resize: [570],
-            srcset: [0.5, 2],
-            sizes: '(min-width: 62rem) 50vw, 100vw',
-          } %}
-          <img alt="" {{ post.image|get_timber_image_responsive(crop) }} />
-				</div>
-			</section>
-		</article>
-	</div>
-{% endblock %}
+  {% block content %}
+    <div class="content-wrapper">
+      <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+        <section class="article-content">
+          <h1 class="article-h1">{{ post.title }}</h1>
+          <div class="article-body">
+            {{ post.content }}
+            {% set crop = {
+              resize: [570],
+              srcset: [0.5, 2],
+              sizes: '(min-width: 62rem) 50vw, 100vw',
+            } %}
+            <img alt="" {{ post.image|get_timber_image_responsive(crop) }} />
+          </div>
+        </section>
+      </article>
+    </div>
+  {% endblock %}
+
+{% endembed %}

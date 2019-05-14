@@ -4916,6 +4916,11 @@ domhandler@^2.3.0:
   dependencies:
     domelementtype "1"
 
+domify@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/domify/-/domify-1.4.0.tgz#11483617f764f8695975b4bdc79b14f0803b629b"
+  integrity sha1-EUg2F/dk+GlZdbS9x5sU8IA7Yps=
+
 domutils@1.4:
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/domutils/-/domutils-1.4.3.tgz#0865513796c6b306031850e175516baf80b72a6f"
@@ -15727,7 +15732,7 @@ tailwindcss-visuallyhidden@^1.0.1:
   resolved "https://registry.yarnpkg.com/tailwindcss-visuallyhidden/-/tailwindcss-visuallyhidden-1.0.2.tgz#cdf178208282d1787e72186df2cf9d1286347667"
   integrity sha512-Hk3Do4x9nAz43CGzcxXqdAhsQs+bE6tUhlcHWBvLC4F8WjqbiGIcp1jPPHmXBAv41D8kFIH0UZyLGw490upsKg==
 
-tailwindcss@1.0.1:
+tailwindcss@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.0.1.tgz#3116e989c64540f1c11214e8b4c08b6aea548be5"
   integrity sha512-tNyvmizhIY9ydXX8m84S/69851QROZzbH6RB/Q4w0K27OssupGcyXeD8zumzb9Yuzq6PifBH2A6ehjuBPklnYA==
@@ -16660,6 +16665,11 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+validate.js@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/validate.js/-/validate.js-0.12.0.tgz#17f989e37c192ea2f826bbf19bf4e97e6e4be68f"
+  integrity sha512-/x2RJSvbqEyxKj0RPN4xaRquK+EggjeVXiDDEyrJzsJogjtiZ9ov7lj/svVb4DM5Q5braQF4cooAryQbUwOxlA==
 
 value-or-function@^3.0.0:
   version "3.0.0"

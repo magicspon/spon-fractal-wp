@@ -12,7 +12,6 @@ const argList = require('../utils/argv')
 const { getSrcPaths, getCMSPath } = require('../utils/paths')
 
 const {
-	env,
 	config,
 	PATHS: {
 		js: { inline }
