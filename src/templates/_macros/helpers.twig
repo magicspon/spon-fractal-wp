@@ -28,15 +28,37 @@
 {% endmacro %}
 
 
-{% macro image(image) %}
+{% macro image(image, settings) %}
+	
 	{% set base64 = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' %}
-	{% set ratio = (image.height / image.width) * 100 ~ '%' %}
-	<div class="w-full relative" style="padding-top: {{ ratio }}">
+	{% set crop = settings.crop|default({
+		resize: [600, 360, 'center'],
+		srcset: [0.5, 2],
+		sizes: '(min-width: 62rem) 50vw, 100vw',
+	}) %}
+
+	{% set ratio = (crop.resize[1] / crop.resize[0]) * 100 ~ '%' %}
+	
+	<div class="w-full relative {{ settings.wrapperClassName|default('') }}" style="padding-top: {{ ratio }}">
 		<noscript>
-			<img class="absolute pin object-fit w-full h-full" src="{{ image.url }}"  width="{{ image.width }}" height="{{ image.height }}" alt="{{ image.alt }}" />
+			<img 
+				class="absolute inset-0 object-cover w-full h-full {{ settings.className|default('') }}" 
+				{{ image|get_timber_image_responsive(crop) }} 
+				alt="{{ image.alt }}" 
+			/>
 		</noscript>
-		<img class="lazyload absolute pin object-fit w-full h-full" src="{{ base64 }}" data-src="{{ image.url }}"   width="{{ image.width }}" height="{{ image.height }}" alt="{{ image.alt }}" />
+		<img 
+			class="absolute lazyload inset-0 object-cover w-full h-full" 
+			{{ image|get_timber_image_responsive(crop, {
+					lazy_srcset: true,
+					lazy_src: true
+				})
+			}}
+			alt="{{ image.alt }}" 
+		/>
 	</div>
+
+
 {% endmacro %}
 
 
@@ -44,9 +66,9 @@
 	{% set base64 = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' %}
 	<div class="w-full relative" style="padding-top: {{ image.aspect ~ '%' }}">
 		<noscript>
-			<img class="absolute pin object-fit w-full h-full" src="{{ image.url }}" srcset="{{ image.srcset }}" alt="{{ image.alt }}" />
+			<img class="absolute pin object-cover w-full h-full" src="{{ image.url }}" srcset="{{ image.srcset }}" alt="{{ image.alt }}" />
 		</noscript>
-		<img class="lazyload absolute pin object-fit w-full h-full {{ className }}" src="{{ base64 }}" data-src="{{ image.url }}" data-srcset="{{ image.srcset }}" alt="{{ image.alt }}" />
+		<img class="lazyload absolute pin object-cover w-full h-full {{ className }}" src="{{ base64 }}" data-src="{{ image.url }}" data-srcset="{{ image.srcset }}" alt="{{ image.alt }}" />
 	</div>
 {% endmacro %}
 

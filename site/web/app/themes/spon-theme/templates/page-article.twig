@@ -1,4 +1,5 @@
 {% embed "wrapper/_layout.twig" %}
+  {% import '@helpers' as h %}
 
   {% block content %}
     <div class="content-wrapper">
@@ -7,12 +8,18 @@
           <h1 class="article-h1">{{ post.title }}</h1>
           <div class="article-body">
             {{ post.content }}
-            {% set crop = {
-              resize: [570],
-              srcset: [0.5, 2],
-              sizes: '(min-width: 62rem) 50vw, 100vw',
-            } %}
-            <img alt="" {{ post.image|get_timber_image_responsive(crop) }} />
+            
+            <div class="max-w-md">
+              {% if post.image|length %}
+                {{ h.image(post.image, {
+                  crop: {
+                    resize: [600, 360, 'center'],
+                    srcset: [0.5, 2],
+                    sizes: '(min-width: 62rem) 50vw, 100vw',
+                  }
+                }) }}
+              {% endif %}
+            </div>
           </div>
         </section>
       </article>
