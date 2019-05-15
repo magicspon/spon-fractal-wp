@@ -120,13 +120,13 @@
 
 `npm run generate-docs`
 
-### Fractal helpers
+### Scaffolding
 
-The following commands require `komp`: https://github.com/FrancisVega/komp (`npm i -g komp`)
+The following commands require [plopjs](https://plopjs.com/documentation/#getting-started) (`npm i -g plop`)
 
 ###### Scaffold new objects/components/etc
 
-`komp new --template fractal ./components/blob`
+`plop`
 
 ## Static Builds
 
